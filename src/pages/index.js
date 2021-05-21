@@ -36,6 +36,7 @@ export default function Home(props) {
 
       <main className={styles.main}>
         <h1>Lista de Pokemons</h1>
+        <small>Dev Thiago Fragata</small>
         <ul>
           {pokemons.map((pokemon) => (
             <li key={pokemon.entry_number}>
