@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
@@ -24,7 +25,7 @@ export async function getStaticProps() {
 
 export default function Home(props) {
   const { pokemons } = props;
-  console.log(pokemons);
+
 
   return (
     <div className={styles.container}>
@@ -34,7 +35,23 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+        </ul>
+      </header>
+
       <main className={styles.main}>
+
         <h1>Lista de Pokemons</h1>
         <small>Dev Thiago Fragata</small>
         <ul>
