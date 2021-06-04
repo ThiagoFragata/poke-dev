@@ -1,11 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Pokemon({ pokemon }) {
-
-    console.log(pokemon.sprites);
     return (
         <div>
             <img src={pokemon.sprites.front_default} alt="Imagem do Pokemon" />
+
+            <Link href="/">
+                <a>Voltar a pagina anterior</a>
+            </Link>
         </div>
     );
 }

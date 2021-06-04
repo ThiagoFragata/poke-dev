@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from '../components/Link';
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
@@ -39,12 +39,12 @@ export default function Home(props) {
         <ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              Home
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <a>About</a>
+              About
             </Link>
           </li>
         </ul>
@@ -58,9 +58,9 @@ export default function Home(props) {
           {pokemons.map((pokemon) => (
             <li key={pokemon.entry_number}>
               <Link href={`/pokemon/${pokemon.entry_number}`}>
-                <a>
-                  {pokemon.pokemon_species.name}
-                </a>
+
+                {pokemon.pokemon_species.name}
+
               </Link>
             </li>
           ))}
