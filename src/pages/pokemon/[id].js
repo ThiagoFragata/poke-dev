@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 export default function Pokemon({ pokemon }) {
     return (
@@ -12,6 +13,15 @@ export default function Pokemon({ pokemon }) {
         </div>
     );
 }
+
+Pokemon.propTypes = {
+    pokemon: PropTypes.shape({
+        name: PropTypes.string,
+        sprites: PropTypes.shape({
+            front_default: PropTypes.string,
+        }),
+    }).isRequired,
+};
 
 
 export async function getStaticProps({ params }) {
@@ -38,28 +48,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
     return {
-        paths: [
-            {
-                params: {
-                    id: '1',
-                },
-            },
-            {
-                params: {
-                    id: '2',
-                },
-            },
-            {
-                params: {
-                    id: '3',
-                },
-            },
-            {
-                params: {
-                    id: '4',
-                },
-            },
-        ],
+        paths: new Array(151).fill(null).map((_, index) => (
+            { params: { id: `${index + 1}` } }
+        )),
         fallback: false
     };
 }
