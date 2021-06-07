@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    header {
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        a {
+          margin: 0 1.5rem;
+          padding: 0.5rem 1rem;
+    
+          border-bottom: 2px solid orange;
+          transition: all 0.2s;
+    
+          &:hover {
+          border: 2px solid orange;
+          border-radius: 10px;
+          }
+        }
+    }
+}
