@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/About.module.scss'
 
 
 export default function Sobre() {
